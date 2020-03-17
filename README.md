@@ -243,6 +243,22 @@ We store all of the flight schedules and aggregated flight information. The coll
     "UpdatedAt": "2020-03-17T06:15Z"
 }
 ```
+## **Flight Admin Aggregator**
+The Flight Admin Aggregator updates the state in **Flight Departure Schedules DB** based on events produced by the **Flight Departure Status**.
+
+```
+GIVEN a new flight event
+WHEN it is valid
+THEN aggregrate it into "Flight Departure Status"
+```
+
+### Tech
+* `.Net Core` - Enough to build an event processing application
+
+### SLO's
+* Availability - `>99.999% events processed successfully`
+* Performance - `>99% of events should process in less than <50ms`
+* 
 ---
 ## Platform
 ## **Event Store**
@@ -251,7 +267,7 @@ This is where we store all of our events that are produced by Domain logic comma
 * `NATS Streaming Server` -  High scale message broker and event store that can handle and persist all the events we can throw at it.
 
 ---
-## Notification
+## Notification Service
 ## **Notification Integration - Integration**
 The Notification Integration calls the Notification Provider whenever there is a flight status event.
 
