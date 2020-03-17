@@ -258,7 +258,7 @@ THEN aggregrate it into "Flight Departure Status"
 ### SLO's
 * Availability - `>99.999% events processed successfully`
 * Performance - `>99% of events should process in less than <50ms`
-* 
+
 ---
 ## Platform
 ## **Event Store**
